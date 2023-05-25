@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SuperHuman</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="btn_txt">Public</string>
+    <string name="location">Location</string>
+    <string name="date">Date</string>
+    <string name="good_health">Good Health</string>
+    <string name="description">Laughing is a great therapy to release stress and reading some jokes with great images at workplace can help you feel less stressed. Following are some images that can make you happy. By this small activity of viewing the images you can make your day stress free.</string>
+    <string name="feed_type_name">Feed Type</string>
+    <string name="name">Smile While you work</string>
+    <string name="likes">Likes</string>
+    <string name="likes_count">(0)</string>
+    <string name="comment">Comments</string>
+    <string name="share">share</string>
+    <string name="progress_text">Please Wait</string>
+</resources>

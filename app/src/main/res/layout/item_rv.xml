@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="items"
+            type="com.example.superhuman.model.DataX" />
+    </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/location_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location"
+                android:paddingStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/ll_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feed_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                tools:src="@drawable/question"
+                loadIcon="@{items.feed_icon_type}"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/location_ic"
+                app:layout_constraintBottom_toBottomOf="@id/location_ic" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical"
+                android:paddingTop="10dp"
+                app:layout_constraintStart_toEndOf="@+id/location_ic"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_semibold"
+                    tools:text="@string/location"
+                    android:text="@{items.cityName}"
+                    android:textColor="@color/mainText"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/metropolis_regular"
+                    tools:text="@string/date"
+                    android:text="@{items.feedDate}"
+                    android:textColor="@color/textAd"
+                    android:textSize="14sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/guru" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/good_health"
+                    android:text="@{items.feedUserName}"
+                    android:textColor="@color/mainText"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/metropolis_semibold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/description_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/description"
+                android:text="@{items.storyDescription}"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="10dp"
+                android:maxLines="3"
+                android:textSize="16sp"
+                android:ellipsize="end"
+                android:textColor="@color/textAd"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/description_iv"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                imageUrl="@{items.story_img}"
+                tools:src="@drawable/sample_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_tv" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ll_bg"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_iv">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/feed_type_name"
+                    android:text="@{items.feed_type_name}"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/metropolis_regular" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/name"
+                    android:text="@{items.name}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/metropolis_semibold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="20dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_3">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/likes"
+                    android:textSize="14sp"
+                    android:textColor="@color/mainText"
+                    android:fontFamily="@font/metropolis_semibold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/likes_count"
+                    countText="@{items.totalLikes}"
+                    android:textSize="14sp"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/mainText"
+                    android:fontFamily="@font/metropolis_semibold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/ic_favorite" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comment"
+                    android:textSize="14sp"
+                    android:layout_marginStart="14dp"
+                    android:textColor="@color/mainText"
+                    android:fontFamily="@font/metropolis_semibold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/likes_count"
+                    countText="@{items.totalComments}"
+                    android:textSize="14sp"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/mainText"
+                    android:fontFamily="@font/metropolis_semibold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/ic_comment" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/share"
+                    android:textSize="14sp"
+                    android:layout_marginStart="14dp"
+                    android:textColor="@color/mainText"
+                    android:fontFamily="@font/metropolis_semibold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/ic_share" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_4"
+                android:background="@color/black"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
